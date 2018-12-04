@@ -33,6 +33,7 @@ curl -X POST \
   --data "config.mandatory_scope=true" \
   --data "config.enable_authorization_code=true"
 ```
+- result :
 
 ```json
 {
@@ -68,6 +69,7 @@ curl -X POST \
   --data "redirect_uri=http://getkong.org/"
 
 ```
+- result :
 
 ```json
 {
@@ -96,11 +98,13 @@ export SCOPES="{ \
 }"
 ```
 
-Note: jika port default (3000) terpakai
+Note: jika port default (3000) terpakai gunakan syntax ini untuk mengubah port
 
 ```shell
-export LISTEN_PORT=3001
+export LISTEN_PORT=3030
 ```
+
+running this project by executing: 
 
 ```shell
 node app.js
