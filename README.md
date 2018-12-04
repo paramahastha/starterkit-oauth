@@ -7,12 +7,16 @@
 
 # Setting up the environment
 
+- add a service:
+
 ```shell
 curl -X POST \
   --url "http://127.0.0.1:8001/services" \
   --data "name=gudang-service" \
   --data "url=http://gudangbin.org/api"
 ```
+
+check result on kong dashboard : http://localhost:8080/#!/services 
 
 - add a route for that service:
 
@@ -22,6 +26,8 @@ curl -X POST \
   --data 'hosts[]=gudangbin.org' \
   --data 'paths[]=/gudang'
 ```
+
+check result : http://localhost:8080/#!/routes
 
 - add the OAuth 2.0 plugin, with available scopes (scope seperti permission / tidak mandatory):
 
@@ -33,7 +39,7 @@ curl -X POST \
   --data "config.mandatory_scope=true" \
   --data "config.enable_authorization_code=true"
 ```
-- result :
+check result : http://localhost:8080/#!/plugins
 
 ```json
 {
@@ -61,6 +67,8 @@ curl -X POST \
   --data "username=kautsar"
 
 ```
+
+check result : http://localhost:8080/#!/consumers
 
 ```shell
 curl -X POST \
